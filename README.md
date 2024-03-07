@@ -73,12 +73,22 @@ public class YourScript : MonoBehaviour
     {
         // Add a listener for an event with an integer parameter
         EventManager.AddListener<int>("yourEventName", HandleIntEvent);
+        // Add a listener for an event with generic parameter
+        EventManager.AddListener<YourClass>(HandleYourClass);
 
         // Invoke the event with an integer parameter
         EventManager.Invoke<int>("yourEventName", 42);
+        // Invoke the event with an generic parameter
+        EventManager.AddListener<YourClass>(new YourClass());
+   
     }
 
     private void HandleIntEvent(int value)
+    {
+        // Handle the event with the integer parameter
+        Debug.Log($"Received event with value: {value}");
+    }
+    private void HandleYourClass(YourClass value)
     {
         // Handle the event with the integer parameter
         Debug.Log($"Received event with value: {value}");
