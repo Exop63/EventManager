@@ -90,7 +90,7 @@ public class YourScript : MonoBehaviour
     }
     private void HandleYourClass(YourClass value)
     {
-        // Handle the event with the integer parameter
+        // Handle the event with the generic parameter
         Debug.Log($"Received event with value: {value}");
     }
 }
